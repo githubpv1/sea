@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<title>sea</title>
+	<link rel="stylesheet" href="css/custom-bootstrap_24_10.css">
+	<link rel="stylesheet" href="css/swiper.css">
+	<!-- <link rel="stylesheet" href="css/accordion.css"> -->
+
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+	<!--[if lt IE 9]>
+	<p class="browsehappy container">Вы используете <strong>устаревший</strong> браузер. Пожалуйста, <a href="http://browsehappy.com/">обновите версию вашего браузера</a> для более
+	продуктивной и комфортной работы.</p>  <![endif]-->
+
+	<!-- svg inline -->
+	<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+		<symbol id="icon-arrow" viewBox="0 0 32 32">
+			<title>arrow</title>
+			<path d="M12.364 23.273l3.636 3.636 3.636-3.636h-7.273z"></path>
+			<path stroke-width="1.7273" d="M16 23.273v-17.455"></path>
+		</symbol>
+		<symbol id="icon-board" viewBox="0 0 32 32">
+			<title>board</title>
+			<path
+				d="M31.467 22.4h-0.533v-21.867c0-0.295-0.239-0.533-0.533-0.533h-28.8c-0.295 0-0.533 0.239-0.533 0.533v21.867h-0.533c-0.295 0-0.533 0.239-0.533 0.533s0.239 0.533 0.533 0.533h9.897l-2.93 7.813c-0.103 0.276 0.037 0.583 0.313 0.686s0.583-0.037 0.686-0.313l1.47-3.919h12.061l1.47 3.921c0.078 0.208 0.277 0.346 0.5 0.346 0.064-0 0.128-0.012 0.188-0.034 0.276-0.103 0.416-0.411 0.312-0.687-0-0-0-0-0-0l-2.93-7.813h9.897c0.295 0 0.533-0.239 0.533-0.533s-0.239-0.533-0.533-0.533zM21.63 26.667h-11.261l1.2-3.2h8.861l1.2 3.2zM27.733 22.4h-3.2v-1.067h3.2v1.067zM29.867 22.4h-1.067v-1.6c0-0.295-0.239-0.533-0.533-0.533h-4.267c-0.295 0-0.533 0.239-0.533 0.533v1.6h-21.333v-21.333h27.733v21.333z">
+			</path>
+			<path
+				d="M11.199 15.413c-0.002-0.015-0.005-0.030-0.008-0.045l-1.6-8.533c-0.047-0.252-0.267-0.435-0.524-0.435h-1.067c-0.257 0-0.477 0.183-0.524 0.435l-1.6 8.533c-0.067 0.287 0.112 0.573 0.399 0.64s0.573-0.112 0.64-0.399c0.003-0.015 0.006-0.030 0.008-0.045l0.719-3.831h1.781l0.719 3.831c0.042 0.292 0.312 0.494 0.604 0.452s0.494-0.312 0.452-0.604zM7.84 10.667l0.6-3.2h0.181l0.605 3.2h-1.387z">
+			</path>
+			<path
+				d="M25.6 12.8c-0.295 0-0.533 0.239-0.533 0.533 0 0.884-0.716 1.6-1.6 1.6s-1.6-0.716-1.6-1.6v-4.267c0-0.884 0.716-1.6 1.6-1.6s1.6 0.716 1.6 1.6c0 0.295 0.239 0.533 0.533 0.533s0.533-0.239 0.533-0.533c0-1.473-1.194-2.667-2.667-2.667s-2.667 1.194-2.667 2.667v4.267c0 1.473 1.194 2.667 2.667 2.667s2.667-1.194 2.667-2.667c0-0.295-0.239-0.533-0.533-0.533z">
+			</path>
+			<path
+				d="M17.583 11.2c0.679-0.499 1.081-1.291 1.083-2.133-0.002-1.472-1.195-2.665-2.667-2.667h-2.133c-0.295 0-0.533 0.239-0.533 0.533v8.533c0 0.295 0.239 0.533 0.533 0.533h2.133c1.468 0.004 2.662-1.183 2.666-2.651 0.002-0.848-0.4-1.646-1.083-2.149zM14.4 7.467h1.6c0.884 0 1.6 0.716 1.6 1.6s-0.716 1.6-1.6 1.6h-1.6v-3.2zM16 14.933h-1.6v-3.2h1.6c0.884 0 1.6 0.716 1.6 1.6s-0.716 1.6-1.6 1.6z">
+			</path>
+		</symbol>
+		<symbol id="icon-book" viewBox="0 0 32 32">
+			<title>book</title>
+			<path
+				d="M31.624 29.466c-0-0-0-0.001-0-0.001l-7.792-29.081c-0.074-0.276-0.358-0.44-0.634-0.367l-7.021 1.881c-0.096 0.029-0.182 0.085-0.246 0.162v-1.114c0-0.287-0.232-0.519-0.519-0.519h-14.534c-0.287 0-0.519 0.232-0.519 0.519v30.107c0 0.287 0.232 0.519 0.519 0.519h14.534c0.287 0 0.519-0.232 0.519-0.519v-28.068l7.671 28.63c0.061 0.227 0.266 0.385 0.501 0.385 0.045-0 0.089-0.006 0.133-0.018l7.020-1.881c0.277-0.073 0.442-0.358 0.369-0.635zM7.625 30.534h-6.229v-29.068h6.229v29.068zM14.893 30.534h-6.229v-29.068h6.229v29.068zM24.47 30.846l-7.523-28.079 6.017-1.613 7.523 28.079-6.017 1.613z">
+			</path>
+			<path
+				d="M6.068 3.542h-3.114c-0.287 0-0.519 0.232-0.519 0.519s0.232 0.519 0.519 0.519h3.114c0.287 0 0.519-0.232 0.519-0.519s-0.232-0.519-0.519-0.519z">
+			</path>
+			<path
+				d="M6.068 5.618h-3.114c-0.287 0-0.519 0.232-0.519 0.519s0.232 0.519 0.519 0.519h3.114c0.287 0 0.519-0.232 0.519-0.519s-0.232-0.519-0.519-0.519z">
+			</path>
+			<path
+				d="M13.335 3.542h-3.114c-0.287 0-0.519 0.232-0.519 0.519s0.232 0.519 0.519 0.519h3.114c0.287 0 0.519-0.232 0.519-0.519s-0.232-0.519-0.519-0.519z">
+			</path>
+			<path
+				d="M13.335 5.618h-3.114c-0.287 0-0.519 0.232-0.519 0.519s0.232 0.519 0.519 0.519h3.114c0.287 0 0.519-0.232 0.519-0.519s-0.232-0.519-0.519-0.519z">
+			</path>
+			<path
+				d="M22.647 3.94c-0.067-0.279-0.347-0.451-0.626-0.384-0.009 0.002-0.018 0.005-0.027 0.007l-3.011 0.806c-0.277 0.073-0.443 0.357-0.37 0.634s0.357 0.443 0.634 0.37c0.002-0 0.003-0.001 0.005-0.001l3.011-0.806c0.279-0.067 0.451-0.347 0.384-0.626z">
+			</path>
+			<path
+				d="M23.172 5.936c-0.074-0.277-0.359-0.441-0.636-0.367h-0.002l-3.008 0.806c-0.277 0.073-0.443 0.357-0.37 0.634s0.357 0.443 0.634 0.37c0.002-0 0.003-0.001 0.005-0.001l3.011-0.806c0.277-0.074 0.441-0.359 0.367-0.636z">
+			</path>
+			<path
+				d="M28.272 24.987c-0.075-0.275-0.357-0.438-0.633-0.366l-3.011 0.806c-0.277 0.074-0.441 0.359-0.367 0.636 0.061 0.227 0.267 0.385 0.502 0.385h0.002c0.045-0 0.091-0.006 0.134-0.018l3.008-0.806c0.277-0.075 0.44-0.361 0.364-0.637z">
+			</path>
+			<path
+				d="M28.814 26.993c-0.075-0.275-0.357-0.438-0.633-0.366l-3.011 0.806c-0.277 0.074-0.441 0.359-0.367 0.636 0.061 0.227 0.267 0.385 0.502 0.385 0.045 0 0.091-0.006 0.134-0.018l3.011-0.806c0.277-0.075 0.44-0.361 0.364-0.637z">
+			</path>
+			<path
+				d="M13.335 25.343h-3.114c-0.287 0-0.519 0.232-0.519 0.519s0.232 0.519 0.519 0.519h3.114c0.287 0 0.519-0.232 0.519-0.519s-0.232-0.519-0.519-0.519z">
+			</path>
+			<path
+				d="M13.335 27.42h-3.114c-0.287 0-0.519 0.232-0.519 0.519s0.232 0.519 0.519 0.519h3.114c0.287 0 0.519-0.232 0.519-0.519s-0.232-0.519-0.519-0.519z">
+			</path>
+			<path
+				d="M6.068 25.343h-3.114c-0.287 0-0.519 0.232-0.519 0.519s0.232 0.519 0.519 0.519h3.114c0.287 0 0.519-0.232 0.519-0.519s-0.232-0.519-0.519-0.519z">
+			</path>
+			<path
+				d="M6.068 27.42h-3.114c-0.287 0-0.519 0.232-0.519 0.519s0.232 0.519 0.519 0.519h3.114c0.287 0 0.519-0.232 0.519-0.519s-0.232-0.519-0.519-0.519z">
+			</path>
+		</symbol>
+		<symbol id="icon-cap" viewBox="0 0 32 32">
+			<title>cap</title>
+			<path
+				d="M31.927 9.431c-0.046-0.077-0.11-0.142-0.187-0.187l-15.47-9.115c-0.166-0.098-0.372-0.098-0.538 0l-15.47 9.115c-0.252 0.149-0.336 0.473-0.187 0.725 0.046 0.077 0.11 0.142 0.187 0.187l2.26 1.332c-0.189 0.366-0.289 0.771-0.291 1.183v8.226c-1.128 0.285-1.811 1.431-1.525 2.559 0.176 0.696 0.694 1.254 1.375 1.481l-1.945 6.322c-0.086 0.28 0.071 0.576 0.35 0.662 0.050 0.016 0.103 0.023 0.156 0.023 0.057-0 0.113-0.009 0.167-0.027l3.178-1.059c0.25-0.083 0.401-0.338 0.353-0.597l-0.964-5.304c1.114-0.334 1.747-1.507 1.414-2.622-0.212-0.71-0.782-1.256-1.5-1.438v-8.226c0.001-0.223 0.050-0.443 0.144-0.646l0.916 0.54v6.139c0 1.889 1.483 3.657 4.073 4.85 2.392 1.030 4.975 1.543 7.579 1.505 2.604 0.038 5.186-0.475 7.578-1.505 2.59-1.193 4.073-2.961 4.073-4.85v-6.139l4.088-2.409c0.252-0.149 0.336-0.473 0.187-0.725zM1.45 30.587l1.177-3.825 0.588 3.237-1.766 0.588zM3.819 22.941c0 0.585-0.474 1.059-1.059 1.059s-1.059-0.474-1.059-1.059 0.474-1.059 1.059-1.059 1.059 0.474 1.059 1.059zM26.592 18.704c0 1.458-1.261 2.875-3.458 3.888-2.252 0.966-4.683 1.446-7.134 1.408-2.451 0.038-4.882-0.442-7.134-1.408-2.197-1.013-3.458-2.43-3.458-3.888v-5.514l10.323 6.082c0.166 0.098 0.372 0.098 0.538 0l10.323-6.082v5.514zM16 18.2l-11.808-6.957c0.155-0.076 0.321-0.127 0.493-0.149l11.38-1.398c0.29-0.036 0.497-0.3 0.461-0.591s-0.3-0.497-0.591-0.461l-11.38 1.398c-0.508 0.063-0.987 0.273-1.377 0.604l-1.605-0.947 14.427-8.5 14.427 8.5-14.427 8.5z">
+			</path>
+		</symbol>
+		<symbol id="icon-email" viewBox="0 0 32 32">
+			<title>email</title>
+			<path
+				d="M29.333 9.6h-0.533v-4.8c0-0.012-0.006-0.021-0.006-0.033-0.003-0.048-0.013-0.095-0.029-0.141-0.006-0.017-0.010-0.034-0.018-0.050-0.025-0.056-0.060-0.108-0.103-0.152l-4.267-4.267c-0.045-0.043-0.096-0.078-0.153-0.103-0.015-0.008-0.032-0.012-0.048-0.018-0.047-0.016-0.095-0.026-0.145-0.029-0.012-0.002-0.021-0.008-0.032-0.008h-18.667c-1.178 0-2.133 0.955-2.133 2.133v7.467h-0.533c-1.472 0.002-2.665 1.195-2.667 2.667v17.067c0.002 1.472 1.195 2.665 2.667 2.667h26.667c1.472-0.002 2.665-1.195 2.667-2.667v-17.067c-0.002-1.472-1.195-2.665-2.667-2.667zM13.029 21.333h5.941l9.12 9.6h-24.181zM29.333 10.667c0.781-0 1.448 0.563 1.578 1.333l-2.111 1.47v-2.804zM26.979 4.267h-1.913c-0.295 0-0.533-0.239-0.533-0.533v-1.913zM4.267 2.133c0-0.589 0.478-1.067 1.067-1.067h18.133v2.667c0 0.884 0.716 1.6 1.6 1.6h2.667v8.878l-8.701 6.055h-6.065l-8.701-6.055zM2.667 10.667h0.533v2.804l-2.111-1.468c0.129-0.771 0.796-1.336 1.578-1.336zM1.067 29.333v-16.046l10.919 7.596-9.532 10.036c-0.794-0.107-1.387-0.785-1.387-1.586zM29.547 30.919l-9.532-10.036 10.919-7.596v16.046c0 0.801-0.593 1.479-1.387 1.586z">
+			</path>
+			<path
+				d="M11.2 4.267h9.6c0.295 0 0.533-0.239 0.533-0.533s-0.239-0.533-0.533-0.533h-9.6c-0.295 0-0.533 0.239-0.533 0.533s0.239 0.533 0.533 0.533z">
+			</path>
+			<path
+				d="M6.4 6.933c0 0.295 0.239 0.533 0.533 0.533h18.133c0.295 0 0.533-0.239 0.533-0.533s-0.239-0.533-0.533-0.533h-18.133c-0.295 0-0.533 0.239-0.533 0.533z">
+			</path>
+			<path
+				d="M25.067 9.6h-18.133c-0.295 0-0.533 0.239-0.533 0.533s0.239 0.533 0.533 0.533h18.133c0.295 0 0.533-0.239 0.533-0.533s-0.239-0.533-0.533-0.533z">
+			</path>
+			<path
+				d="M25.067 12.8h-18.133c-0.295 0-0.533 0.239-0.533 0.533s0.239 0.533 0.533 0.533h18.133c0.295 0 0.533-0.239 0.533-0.533s-0.239-0.533-0.533-0.533z">
+			</path>
+			<path
+				d="M21.867 16h-11.733c-0.295 0-0.533 0.239-0.533 0.533s0.239 0.533 0.533 0.533h11.733c0.295 0 0.533-0.239 0.533-0.533s-0.239-0.533-0.533-0.533z">
+			</path>
+			<path
+				d="M5.867 5.333c0.295 0 0.533-0.239 0.533-0.533v-1.067c0-0.295 0.239-0.533 0.533-0.533h1.067c0.295 0 0.533-0.239 0.533-0.533s-0.239-0.533-0.533-0.533h-1.067c-0.884 0-1.6 0.716-1.6 1.6v1.067c0 0.295 0.239 0.533 0.533 0.533z">
+			</path>
+		</symbol>
+		<symbol id="icon-forum" viewBox="0 0 32 32">
+			<title>forum</title>
+			<path
+				d="M16 0c-8.822 0-16 5.503-16 12.267s7.178 12.267 16 12.267c1.882 0.006 3.756-0.252 5.567-0.764-0.666 1.936-1.534 3.796-2.59 5.55-0.845 1.499-1.1 1.951-0.85 2.379 0.113 0.19 0.318 0.305 0.539 0.302 2.099 0 9.222-6.51 9.583-11.836 2.42-2.199 3.75-4.995 3.75-7.897 0-6.764-7.178-12.267-16-12.267zM27.376 19.514c-0.111 0.098-0.176 0.237-0.181 0.385-0.132 4.341-5.44 9.518-7.742 10.758 0.138-0.255 0.3-0.542 0.453-0.814 0.947-1.68 2.379-4.22 2.945-6.756 0.035-0.158-0.003-0.323-0.104-0.45s-0.254-0.2-0.416-0.2c-0.059 0-0.117 0.010-0.173 0.029-1.983 0.671-4.064 1.009-6.158 1.001-8.234 0-14.933-5.024-14.933-11.2s6.699-11.2 14.933-11.2 14.933 5.024 14.933 11.2c0 2.658-1.264 5.232-3.557 7.247z">
+			</path>
+			<path
+				d="M27.2 11.733h-22.4c-0.295 0-0.533 0.239-0.533 0.533s0.239 0.533 0.533 0.533h22.4c0.295 0 0.533-0.239 0.533-0.533s-0.239-0.533-0.533-0.533z">
+			</path>
+			<path
+				d="M20.8 16h-12.8c-0.295 0-0.533 0.239-0.533 0.533s0.239 0.533 0.533 0.533h12.8c0.295 0 0.533-0.239 0.533-0.533s-0.239-0.533-0.533-0.533z">
+			</path>
+			<path
+				d="M8 8.533h16c0.295 0 0.533-0.239 0.533-0.533s-0.239-0.533-0.533-0.533h-16c-0.295 0-0.533 0.239-0.533 0.533s0.239 0.533 0.533 0.533z">
+			</path>
+		</symbol>
+		<symbol id="icon-logo" viewBox="13 11 5 9">
+			<title>logo</title>
+			<path 
+				d="M18.882 14.124c-0.168 0-0.318 0.017-0.469 0.050-0.62-1.173-1.843-1.96-3.267-1.96-1.826 0-3.334 1.324-3.636 3.049-0.251-0.034-0.486-0.017-0.754 0.050-0.938 0.251-1.642 1.072-1.659 2.044-0.034 1.24 0.955 2.245 2.178 2.245v0c0.704 0 1.273-0.57 1.273-1.273v-0.771c0-0.302 0.251-0.553 0.553-0.553v0c0.302 0 0.553 0.251 0.553 0.553v0.486c0 0.268 0.218 0.486 0.486 0.486v0c0.268 0 0.486-0.218 0.486-0.486v-2.111c0-0.302 0.251-0.553 0.553-0.553v0c0.302 0 0.553 0.251 0.553 0.553v3.15c0 0.285 0.235 0.503 0.503 0.503v0c0.285 0 0.503-0.235 0.503-0.503v-0.754c0-0.302 0.251-0.553 0.553-0.553v0c0.302 0 0.553 0.251 0.553 0.553v0.335c0 0.519 0.419 0.938 0.938 0.938v0c1.424 0 2.664-1.072 2.798-2.496 0.168-1.625-1.106-2.982-2.697-2.982zM13.068 16.486c-0.503 0-0.905-0.402-0.905-0.905s0.402-0.905 0.905-0.905c0.503 0 0.905 0.402 0.905 0.905s-0.402 0.905-0.905 0.905zM15.179 14.861c-0.503 0-0.905-0.402-0.905-0.905s0.402-0.905 0.905-0.905c0.503 0 0.905 0.402 0.905 0.905-0.017 0.519-0.419 0.905-0.905 0.905zM17.307 17.257c-0.503 0-0.905-0.402-0.905-0.905s0.402-0.905 0.905-0.905c0.503 0 0.905 0.402 0.905 0.905s-0.402 0.905-0.905 0.905z">
+			</path>
+			<path 
+				d="M15.765 10.739l-0.938 0.117-1.776 0.218-1.391 1.123-0.754 0.62 0.503-0.067c0.117 0.134 0.268 0.369 0.117 0.586-0.184 0.235-0.268 0.369-0.302 0.452-0.067 0-0.117 0.050-0.134 0.101s0 0.084 0.017 0.117l-0.285 0.653 0.369 0.101 0.084-0.687c0.050-0.017 0.084-0.050 0.101-0.101s0-0.101-0.034-0.134c0.034-0.067 0.117-0.201 0.285-0.419 0.184-0.235 0.084-0.486-0.067-0.687l0.285-0.034 0.218 0.503c0.737-0.838 1.826-1.374 3.049-1.374 0.034 0 0.084 0 0.117 0l-0.201-0.486 0.737-0.603z">
+			</path>
+		</symbol>
+		<symbol id="icon-management" viewBox="0 0 32 32">
+			<title>management</title>
+			<path
+				d="M28.8 17.6v-1.067c0.295 0 0.533-0.239 0.533-0.533v-3.2c0-0.295-0.239-0.533-0.533-0.533h-2.88l-0.103-0.401c-0.236-0.916-0.602-1.794-1.088-2.606l-0.213-0.357 2.045-2.048c0.206-0.206 0.206-0.54 0-0.747l-2.265-2.268c-0.209-0.199-0.538-0.199-0.747 0l-2.048 2.048-0.357-0.213c-0.813-0.486-1.692-0.853-2.609-1.089l-0.401-0.104v-2.883c0-0.295-0.239-0.533-0.533-0.533h-3.2c-0.295 0-0.533 0.239-0.533 0.533v2.88l-0.401 0.104c-0.916 0.236-1.794 0.602-2.606 1.087l-0.357 0.214-2.048-2.044c-0.209-0.201-0.54-0.201-0.749 0l-2.266 2.265c-0.1 0.099-0.156 0.234-0.156 0.375s0.056 0.276 0.156 0.375l2.048 2.048-0.213 0.357c-0.486 0.812-0.852 1.69-1.088 2.606l-0.104 0.401h-2.883c-0.295 0-0.533 0.239-0.533 0.533v3.2c0 0.295 0.239 0.533 0.533 0.533v1.067c-0.884 0-1.6-0.716-1.6-1.6v-3.2c0-0.884 0.716-1.6 1.6-1.6h2.064c0.22-0.738 0.517-1.449 0.888-2.124l-1.467-1.467c-0.3-0.299-0.468-0.705-0.468-1.129s0.168-0.83 0.468-1.129l2.267-2.267c0.631-0.604 1.627-0.604 2.259 0l1.466 1.466c0.675-0.37 1.387-0.667 2.124-0.886v-2.064c0-0.884 0.716-1.6 1.6-1.6h3.2c0.884 0 1.6 0.716 1.6 1.6v2.064c0.738 0.22 1.449 0.517 2.124 0.887l1.467-1.467c0.632-0.604 1.627-0.604 2.259 0l2.266 2.266c0.3 0.299 0.468 0.705 0.468 1.129s-0.169 0.83-0.468 1.129l-1.467 1.467c0.37 0.675 0.667 1.387 0.887 2.125h2.064c0.884 0 1.6 0.716 1.6 1.6v3.2c0 0.884-0.716 1.6-1.6 1.6z">
+			</path>
+			<path
+				d="M23.467 14.4h-1.067c0-3.535-2.865-6.4-6.4-6.4s-6.4 2.865-6.4 6.4h-1.067c0-4.124 3.343-7.467 7.467-7.467s7.467 3.343 7.467 7.467z">
+			</path>
+			<path
+				d="M16 18.667c-1.767 0-3.2-1.433-3.2-3.2s1.433-3.2 3.2-3.2c1.767 0 3.2 1.433 3.2 3.2-0.002 1.767-1.433 3.198-3.2 3.2zM16 13.333c-1.178 0-2.133 0.955-2.133 2.133s0.955 2.133 2.133 2.133 2.133-0.955 2.133-2.133-0.955-2.133-2.133-2.133z">
+			</path>
+			<path
+				d="M25.067 20.8c-1.767 0-3.2-1.433-3.2-3.2s1.433-3.2 3.2-3.2c1.767 0 3.2 1.433 3.2 3.2-0.002 1.767-1.433 3.198-3.2 3.2zM25.067 15.467c-1.178 0-2.133 0.955-2.133 2.133s0.955 2.133 2.133 2.133 2.133-0.955 2.133-2.133-0.955-2.133-2.133-2.133z">
+			</path>
+			<path
+				d="M6.933 20.8c-1.767 0-3.2-1.433-3.2-3.2s1.433-3.2 3.2-3.2c1.767 0 3.2 1.433 3.2 3.2-0.002 1.767-1.433 3.198-3.2 3.2zM6.933 15.467c-1.178 0-2.133 0.955-2.133 2.133s0.955 2.133 2.133 2.133 2.133-0.955 2.133-2.133-0.955-2.133-2.133-2.133z">
+			</path>
+			<path
+				d="M29.902 22.168c-0.795-0.546-1.737-0.838-2.702-0.835h-4.267c-0.259 0.002-0.518 0.026-0.774 0.070-0.341-0.534-0.785-0.994-1.306-1.355-0.078-0.059-0.16-0.113-0.246-0.16-0.746-0.452-1.602-0.69-2.474-0.689h-4.267c-1.631-0.006-3.151 0.827-4.024 2.204-0.256-0.045-0.516-0.068-0.776-0.070h-4.267c-0.964-0.003-1.906 0.288-2.7 0.834-1.313 0.893-2.099 2.378-2.1 3.966v2.133c0.002 1.456 0.849 2.779 2.172 3.389 0.488 0.23 1.022 0.348 1.561 0.345h5.333v-1.067h-4.8v-5.867h-1.067v5.813c-0.201-0.040-0.396-0.105-0.581-0.193-0.945-0.436-1.551-1.38-1.553-2.42v-2.133c0.001-1.236 0.614-2.391 1.635-3.086 0.617-0.424 1.349-0.649 2.098-0.647h4.267c0.094 0 0.185 0.010 0.276 0.016-0.18 0.509-0.274 1.044-0.276 1.584v5.333c0.002 1.472 1.195 2.665 2.667 2.667h1.6v-8.533h-1.067v7.467h-0.533c-0.884 0-1.6-0.716-1.6-1.6v-5.333c0-2.062 1.672-3.733 3.733-3.733h4.267c0.686 0.001 1.359 0.19 1.944 0.549 0.054 0.030 0.106 0.063 0.156 0.1 0.5 0.342 0.91 0.799 1.196 1.333 0.287 0.539 0.438 1.141 0.438 1.752v5.333c0 0.884-0.716 1.6-1.6 1.6h-0.533v-7.467h-1.067v8.533h1.6c1.472-0.002 2.665-1.195 2.667-2.667v-5.333c-0.002-0.54-0.096-1.075-0.276-1.584 0.092-0.006 0.183-0.016 0.276-0.016h4.267c0.749-0.002 1.482 0.224 2.1 0.648 1.021 0.695 1.632 1.85 1.634 3.085v2.133c-0.002 1.044-0.612 1.991-1.561 2.424-0.182 0.086-0.374 0.149-0.572 0.189v-5.813h-1.067v5.867h-4.8v1.067h5.333c0.536 0.003 1.067-0.113 1.553-0.34 1.327-0.608 2.179-1.933 2.181-3.393v-2.133c-0.001-1.587-0.786-3.071-2.098-3.965z">
+			</path>
+			<path d="M13.867 30.933h4.267v1.067h-4.267z"></path>
+		</symbol>
+		<symbol id="icon-opportunities" viewBox="0 0 32 32">
+			<title>opportunities</title>
+			<path
+				d="M16 6.551c1.743 0 3.156-1.413 3.156-3.156s-1.413-3.156-3.156-3.156c-1.743 0-3.156 1.413-3.156 3.156 0.002 1.743 1.414 3.155 3.156 3.156zM16 1.29c1.162 0 2.104 0.942 2.104 2.104s-0.942 2.104-2.104 2.104-2.104-0.942-2.104-2.104 0.942-2.104 2.104-2.104z">
+			</path>
+			<path
+				d="M22.839 12.338c-0.001-1.566-0.775-3.030-2.069-3.911-0.784-0.539-1.714-0.826-2.666-0.824h-4.209c-2.614 0.003-4.732 2.121-4.735 4.735v4.209c0.002 1.829 1.346 3.379 3.156 3.64v11.616h1.052v-21.043h-1.052v8.365c-1.224-0.252-2.103-1.328-2.104-2.578v-4.209c0.002-2.033 1.65-3.68 3.683-3.682h4.209c0.739-0.002 1.462 0.221 2.071 0.64 1.007 0.686 1.61 1.825 1.611 3.043v4.209c-0.001 1.030-0.603 1.965-1.54 2.391-0.18 0.085-0.369 0.147-0.564 0.186v-8.365h-1.052v21.043h1.052v-11.615c0.348-0.047 0.687-0.146 1.005-0.295 1.31-0.599 2.15-1.907 2.151-3.347z">
+			</path>
+			<path d="M15.474 19.703h1.052v12.1h-1.052z"></path>
+			<path d="M2.014 16.547h6.095v-1.052h-6.095l1.334-1.334-0.744-0.744-2.604 2.604 2.604 2.604 0.744-0.744z"></path>
+			<path d="M29.396 13.416l-0.744 0.744 1.334 1.334h-6.095v1.052h6.095l-1.334 1.334 0.744 0.744 2.604-2.604z"></path>
+			<path d="M3.9 4.665l4.889 4.889 0.744-0.744-4.889-4.889h1.886v-1.052h-3.683v3.683h1.052z"></path>
+			<path d="M23.211 9.554l4.889-4.889v1.886h1.052v-3.683h-3.683v1.052h1.886l-4.889 4.889z"></path>
+			<path d="M8.789 22.488l-4.889 4.889v-1.886h-1.052v3.683h3.683v-1.052h-1.886l4.889-4.889z"></path>
+			<path d="M28.1 27.376l-4.889-4.889-0.744 0.744 4.889 4.889h-1.886v1.052h3.683v-3.683h-1.052z"></path>
+		</symbol>
+		<symbol id="icon-presenter" viewBox="0 0 32 32">
+			<title>presenter</title>
+			<path
+				d="M6.4 10.667c1.767 0 3.2-1.433 3.2-3.2s-1.433-3.2-3.2-3.2-3.2 1.433-3.2 3.2c0.002 1.767 1.433 3.198 3.2 3.2zM6.4 5.333c1.178 0 2.133 0.955 2.133 2.133s-0.955 2.133-2.133 2.133-2.133-0.955-2.133-2.133 0.955-2.133 2.133-2.133z">
+			</path>
+			<path d="M5.867 21.867h1.067v10.133h-1.067z"></path>
+			<path
+				d="M32 0h-22.4v3.2h1.067v8.533h-8c-1.472 0.002-2.665 1.195-2.667 2.667v5.333c0 0.884 0.716 1.6 1.6 1.6h1.067v10.667h1.067v-17.067h-1.067v5.333h-1.067c-0.295 0-0.533-0.239-0.533-0.533v-5.333c0-0.884 0.716-1.6 1.6-1.6h12.8c0 0.884-0.716 1.6-1.6 1.6h-4.8v17.6h1.067v-16.533h0.533v1.6c0 0.884 0.716 1.6 1.6 1.6h6.4v0.533c0.001 0.768 0.548 1.428 1.303 1.57l-4.983 10.467 0.963 0.459 4.32-9.067v9.371h1.067v-9.372l4.32 9.067 0.963-0.459-4.989-10.466c0.755-0.142 1.302-0.802 1.303-1.57v-0.533h6.4c0.884 0 1.6-0.716 1.6-1.6v-13.867h1.067zM21.867 19.2c0 0.295-0.239 0.533-0.533 0.533h-1.067c-0.295 0-0.533-0.239-0.533-0.533v-0.533h2.133zM29.867 17.067c0 0.295-0.239 0.533-0.533 0.533h-17.067c-0.295 0-0.533-0.239-0.533-0.533v-1.6h2.133c1.472-0.002 2.665-1.195 2.667-2.667v-1.067h-4.8v-8.533h18.133zM30.933 2.133h-20.267v-1.067h20.267z">
+			</path>
+			<path
+				d="M19.593 15.385l1.034-2.585h2.124l1.6-3.733h2.067l2.292-3.437-0.887-0.592-1.975 2.963h-2.199l-1.6 3.733h-2.143l-1.099 2.749-1.869 0.467 0.258 1.035z">
+			</path>
+		</symbol>
+		<symbol id="icon-winner" viewBox="0 0 32 32">
+			<title>winner</title>
+			<path
+				d="M15.971 6.565c-1.756 0-3.179-1.424-3.179-3.179s1.424-3.179 3.179-3.179c1.756 0 3.179 1.423 3.179 3.179-0.002 1.755-1.424 3.178-3.179 3.179zM15.971 1.266c-1.171 0-2.12 0.949-2.12 2.12s0.949 2.12 2.12 2.12c1.171 0 2.12-0.949 2.12-2.12s-0.949-2.12-2.12-2.12z">
+			</path>
+			<path
+				d="M22.859 28.821v-2.12h-2.649v-14.617l7.355-7.354c1.032-1.036 1.032-2.711 0-3.747l-0.984-0.982-7.711 7.197c-0.294 0.275-0.681 0.428-1.084 0.428h-3.629c-0.403 0.001-0.79-0.152-1.084-0.428l-7.712-7.197-0.983 0.982c-1.032 1.036-1.032 2.712 0 3.747l7.354 7.354v14.617h-2.649v2.12h-9.008v3.179h1.060v-2.12h7.948v2.12h1.060v-4.239h11.658v4.239h1.060v-2.12h7.948v2.12h1.060v-3.179zM5.127 3.981c-0.619-0.622-0.619-1.627 0-2.249l0.258-0.259 6.964 6.499c0.49 0.459 1.136 0.714 1.808 0.713h3.629c0.671 0.001 1.317-0.254 1.807-0.713l6.964-6.499 0.259 0.259c0.619 0.621 0.619 1.627 0 2.249l-7.665 7.664v15.056h-2.649v-8.478h-1.060v8.478h-2.649v-15.056z">
+			</path>
+		</symbol>
+		<symbol id="icon-facebook" viewBox="0 0 16 28">
+			<title>facebook</title>
+			<path
+				d="M14.984 0.187v4.125h-2.453c-1.922 0-2.281 0.922-2.281 2.25v2.953h4.578l-0.609 4.625h-3.969v11.859h-4.781v-11.859h-3.984v-4.625h3.984v-3.406c0-3.953 2.422-6.109 5.953-6.109 1.687 0 3.141 0.125 3.563 0.187z">
+			</path>
+		</symbol>
+		<symbol id="icon-instagram" viewBox="0 0 24 28">
+			<title>instagram</title>
+			<path
+				d="M16 14c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zM18.156 14c0 3.406-2.75 6.156-6.156 6.156s-6.156-2.75-6.156-6.156 2.75-6.156 6.156-6.156 6.156 2.75 6.156 6.156zM19.844 7.594c0 0.797-0.641 1.437-1.437 1.437s-1.437-0.641-1.437-1.437 0.641-1.437 1.437-1.437 1.437 0.641 1.437 1.437zM12 4.156c-1.75 0-5.5-0.141-7.078 0.484-0.547 0.219-0.953 0.484-1.375 0.906s-0.688 0.828-0.906 1.375c-0.625 1.578-0.484 5.328-0.484 7.078s-0.141 5.5 0.484 7.078c0.219 0.547 0.484 0.953 0.906 1.375s0.828 0.688 1.375 0.906c1.578 0.625 5.328 0.484 7.078 0.484s5.5 0.141 7.078-0.484c0.547-0.219 0.953-0.484 1.375-0.906s0.688-0.828 0.906-1.375c0.625-1.578 0.484-5.328 0.484-7.078s0.141-5.5-0.484-7.078c-0.219-0.547-0.484-0.953-0.906-1.375s-0.828-0.688-1.375-0.906c-1.578-0.625-5.328-0.484-7.078-0.484zM24 14c0 1.656 0.016 3.297-0.078 4.953-0.094 1.922-0.531 3.625-1.937 5.031s-3.109 1.844-5.031 1.937c-1.656 0.094-3.297 0.078-4.953 0.078s-3.297 0.016-4.953-0.078c-1.922-0.094-3.625-0.531-5.031-1.937s-1.844-3.109-1.937-5.031c-0.094-1.656-0.078-3.297-0.078-4.953s-0.016-3.297 0.078-4.953c0.094-1.922 0.531-3.625 1.937-5.031s3.109-1.844 5.031-1.937c1.656-0.094 3.297-0.078 4.953-0.078s3.297-0.016 4.953 0.078c1.922 0.094 3.625 0.531 5.031 1.937s1.844 3.109 1.937 5.031c0.094 1.656 0.078 3.297 0.078 4.953z">
+			</path>
+		</symbol>
+		<symbol id="icon-twitter" viewBox="0 0 32 32">
+			<title>twitter</title>
+			<path
+				d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z">
+			</path>
+		</symbol>
+		<symbol id="icon-triangle" viewBox="0 0 1 2">
+			<title>triangle</title>
+			<polygon points="0,0 1,1 0,2" />
+		</symbol>
+	</svg>
+
+	<div class="wrap">
+
+		<header class="head">
+
+			<div class="head__nav">
+				<div class="logo">
+					<svg class="icon logo__icon" role="img" aria-label="логотип">
+						<use xlink:href="#icon-logo"></use>
+					</svg>
+					<div class="logo__text">SEA</div>
+					<a class="logo__link" href="/" title="на главную"></a>
+				</div>
+			
+				<nav class="site__nav">
+					<ul>
+						<li><a href="#about" class="activ" aria-label="about">
+								<svg class="icon">
+									<use xlink:href="#icon-board"></use>
+								</svg></a>
+						</li>
+						<li><a href="#courses" aria-label="courses">
+								<svg class="icon">
+									<use xlink:href="#icon-book"></use>
+								</svg></a>
+						</li>
+						<li><a href="#teach" aria-label="teacher">
+								<svg class="icon">
+									<use xlink:href="#icon-cap"></use>
+								</svg></a>
+						</li>
+						<li><a href="#faq" aria-label="faq">
+								<svg class="icon">
+									<use xlink:href="#icon-forum"></use>
+								</svg></a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="head__body inner">
+				<div class="container">
+					<h1 class="title_1">Social Entrepreneurship <br> Academy</h1>
+
+					<form action="send.php" method="POST">
+						<div class="form__inner">
+							<input class="input__email" placeholder="Just enter your email                             and"
+								maxlength="35" type="email" name="email" required />
+
+							<button class="btn btn_xl btn_submit" type="submit" value="Отправить">get started for free</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</header>
+
+		<main class="main inner">
+
+
+			<div id="about" class="about">
+				<section class="why">
+					<div class="container">
+
+						<form action="send.php" method="POST">
+							<div class="form__inner_sm  form__inner">
+
+								<input class="input__email_sm" placeholder="Just enter your email                                 and"
+									maxlength="35" type="email" name="email" required />
+
+								<button class="btn btn_sm btn_submit" type="submit" value="Отправить">get started for free</button>
+							</div>
+						</form>
+
+						<div class="why__row row">
+
+							<div class="col-xl-4 offset-1 offset-xl-0">
+								<h2 class="title_2 why__title">Why SEA</h2>
+							</div>
+
+							<div class="why__col_text col-md-10 col-xl-4 offset-3 offset-md-2 offset-xl-1">
+								<p>The <span>KEY</span> advantage to SEA model is that everything we teach in the classroom our students
+									are able, encouraged and required to execute in real life.</p>
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="#icon-management"></use>
+								</svg>
+							</div>
+
+							<div class="why__col_text col-md-10 col-xl-4 offset-3 offset-md-2 offset-xl-1">
+								<p>We have <span>GLOBAL</span> network of strategic partners and funding sources.</p>
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="#icon-opportunities"></use>
+								</svg>
+							</div>
+
+							<div class="why__col_text col-md-10 col-xl-4 offset-3 offset-md-2 offset-xl-1">
+								<p>Our faculty are <span>EXPERTS</span> in every vertical and subject with in-depth network of all
+									stakeholders in a particular industry.</p>
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="#icon-presenter"></use>
+								</svg>
+							</div>
+
+							<div class="why__col_text col-md-10 col-xl-4 offset-3 offset-md-2 offset-xl-1">
+								<p>SEA goal is not to give you a <span>DIPLOMA</span> (each graduate get one)but real life experience
+									and
+									knowledge, so you and your team can be successful in real market place.</p>
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="#icon-winner"></use>
+								</svg>
+							</div>
+						</div>
+
+						<div class="why__bg_cover m_negativ" style="background-image: url('img/bg_why.jpg');"></div>
+					</div>
+
+				</section>
+
+				<section class="mission">
+					<div class="container">
+						<div class="row ">
+							<div class="col-md-6 ">
+								<h2 class="title_2 ">Mission</h2>
+							</div>
+							<div class=" col-md-18 ">
+								<p class="">Our mission is to give individuals with perseverance, ambition, and initiative a way to grow
+									their business and execute their ideas. We
+									provide them with an educational opportunity based on real life experiences that leads to
+									self-discovery, pursuit of knowledge and
+									ability to adapt to ever changing social and economic environments.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="founder">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-5 ">
+								<h2 class="founder__title title_2 ">Founder</h2>
+							</div>
+
+							<div class="founder__col_quote col-md-16 col-xl-10 ">
+								<div class="founder__desc">
+									<p class="founder__quote ">Experience may be a great teacher, the combination of experience and
+										education is unsurpassed in improving the odds for entrepreneurial success.”</p>
+									<p class="founder__name">Henry Shterenberg,<br> Founder of Social Entrepreneurship Academy</p>
+								</div>
+								<div class="founder__bg-img_cover bg-img_cover" style="background-image: url('img/bg_founder.jpg');">
+								</div>
+							</div>
+
+							<div class="col-md-19 col-xl-8 offset-md-5 offset-xl-1">
+								<p class="founder__text">Every year, approximately 600,000 new ventures are
+									created in the U.S. and at any given time, as many as 1 in
+									10 American adults are trying to start a new business.
+									Less than one half of these ventures will still be operating
+									after three years. However, studies have shown that
+									there are practices such as developing and executing a
+									professional business plan which can significantly
+									increase one’s chance for success.</p>
+
+								<p class="founder__text">I urge everyone to get involved in this program.
+									Regardless of your role – apprenticeship provider,
+									mentor, faculty, sponsor, guest lecturer or investor, you
+									will find a great deal of personal satisfaction and growth.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+
+			<div class="wrap_e">
+				<section id="courses" class="courses ">
+					<div class="container">
+						<div class="courses_top">
+							<h2 class="title_2 ">Courses</h2>
+
+							<form action="select1.php" method="post">
+								<select class="select-css">
+									<option value="Sony">all courses</option>
+									<option value="">Cours1</option>
+									<option value="">Cours2</option>
+									<option value="">Cours3</option>
+								</select>
+								<svg class="icon icon_triangle icon_triangle_select">
+									<use xlink:href="#icon-triangle"></use>
+								</svg>
+							</form>
+						</div>
+
+						<!--  carousel  -->
+						<div class="carousel ">
+							<div class="cours__swiper swiper-container">
+								<ul class="swiper-wrapper">
+
+									<li class="swiper-slide carousel__item">
+										<a class="carousel__link" target="_blank" href="#">
+											<div class="carousel__img-wrap ">
+												<img src="img/bg_courses1.jpg" alt="" class="img_cover">
+											</div>
+											<h3 class="carousel__title">Idea To Reality</h3>
+											<p class="carousel__text">The course is designed for individuals who are contemplating becoming
+												entrepreneur and the ones who already made a GIAGANTIC step to transform their Idea to Reality
+											</p>
+											<div class="price__wrap">
+												<div class="carousel__price">$ 3000 <span>$ 3500</span></div>
+												<div class="carousel__more">learn more</div>
+											</div>
+
+										</a>
+									</li>
+
+									<div class="swiper-slide">
+										<li class="carousel__item">
+											<a class="carousel__link" target="_blank" href="#">
+												<div class="carousel__img-wrap ">
+													<img src="img/bg_courses2.jpg" alt="" class="img_cover">
+												</div>
+												<h3 class="carousel__title">Executive Leadership <br>for 21st Century</h3>
+												<p class="carousel__text">the course is designed for founders and C-level executives of small,
+													medium and large size business, and government leaders. </p>
+												<span class="carousel__more">learn more</span>
+												<div class="carousel__price">$ 3000 <span></span></div>
+											</a>
+										</li>
+									</div>
+
+									<div class="swiper-slide">
+										<li class="carousel__item">
+											<a class="carousel__link" target="_blank" href="#">
+												<div class="carousel__img-wrap ">
+													<img src="img/bg_courses2.jpg" alt="" class="img_cover">
+												</div>
+												<h3 class="carousel__title">Idea To Reality</h3>
+												<p class="carousel__text">The course is designed for individuals who are contemplating becoming
+													entrepreneur and the ones who already made a GIAGANTIC step to transform their Idea to Reality
+												</p>
+												<span class="carousel__more">learn more</span>
+												<div class="carousel__price">$ 3000 <span>$ 3500</span></div>
+											</a>
+										</li>
+									</div>
+
+									<div class="swiper-slide">
+										<li class="carousel__item">
+											<a class="carousel__link" target="_blank" href="#">
+												<div class="carousel__img-wrap ">
+													<img src="img/bg_courses1.jpg" alt="" class="img_cover">
+												</div>
+												<h3 class="carousel__title">Executive Leadership <br>for 21st Century</h3>
+												<p class="carousel__text">the course is designed for founders and C-level executives of small,
+													medium and large size business, and government leaders. </p>
+												<span class="carousel__more">learn more</span>
+												<div class="carousel__price">$ 3000 <span>$ 3500</span></div>
+											</a>
+										</li>
+									</div>
+
+								</ul>
+							</div>
+
+							<div class="arrow_carousel ">
+								<button class="cours__prev_slide prev_slide" aria-label="Previous">
+									<svg class="icon icon_arrow_prev">
+										<use xlink:href="#icon-arrow"></use>
+									</svg>
+								</button>
+
+									<span class="cours__swiper_pagination swiper-pagination"></span>
+
+								<button class="cours__next_slide next_slide" aria-label="Next">
+									<svg class="icon icon_arrow_next">
+										<use xlink:href="#icon-arrow"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+				</section>
+
+
+				<section id="teach" class="teach ">
+
+					<div class="container">
+						<div class="row  ">
+
+							<div class="col-md-8 col-xl-5 d-flex flex-column ">
+								<h2 class="title_2 ">Teacher</h2>
+								<p class="teach__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias adipisci ad
+									error nam? Accusantium
+									quam ea similique maxime laudantium ex.</p>
+								<button class="btn btn_xl btn_teach" data-btn_toggle_teach>see all teachers
+									<svg class="icon icon_triangle">
+										<use xlink:href="#icon-triangle"></use>
+									</svg>
+								</button>
+							</div>
+
+							<div class="col-24 col-md-16 col-xl-18 offset-xl-1">
+								<div class="teach__swiper swiper-container">
+									<div class="swiper-wrapper teach__wrapper">
+	
+										<div class="teach__slide swiper-slide col-md-12 col-xl-8">
+											<div class="gallery__bg-img_cover" style="background-image: url('img/img_teacher1.jpg');"></div>
+											<div class="gallery__title">Aaron Franklin</div>
+											<div class="gallery__text">Eaches texas-style BBQ</div>
+										</div>
+	
+										<div class="teach__slide swiper-slide col-md-12 col-xl-8">
+											<div class="gallery__bg-img_cover" style="background-image: url('img/img_teacher2.jpg');"></div>
+											<div class="gallery__title">Aaron Franklin</div>
+											<div class="gallery__text">Eaches texas-style BBQ</div>
+										</div>
+	
+										<div class="teach__slide swiper-slide col-md-12 col-xl-8">
+											<div class="gallery__bg-img_cover" style="background-image: url('img/img_teacher3.jpg');"></div>
+											<div class="gallery__title">Aaron Franklin</div>
+											<div class="gallery__text">Eaches texas-style BBQ</div>
+										</div>
+	
+										<div class="teach__slide swiper-slide col-md-12 col-xl-8">
+											<div class="gallery__bg-img_cover" style="background-image: url('img/img_teacher4.jpg');"></div>
+											<div class="gallery__title">Aaron Franklin</div>
+											<div class="gallery__text">Eaches texas-style BBQ</div>
+										</div>
+	
+										<div class="teach__slide swiper-slide col-md-12 col-xl-8">
+											<div class="gallery__bg-img_cover" style="background-image: url('img/img_teacher5.jpg');"></div>
+											<div class="gallery__title">Aaron Franklin</div>
+											<div class="gallery__text">Eaches texas-style BBQ</div>
+										</div>
+	
+										<div class="teach__slide swiper-slide col-md-12 col-xl-8">
+											<div class="gallery__bg-img_cover" style="background-image: url('img/img_teacher6.jpg');"></div>
+											<div class="gallery__title">Aaron Franklin</div>
+											<div class="gallery__text">Eaches texas-style BBQ</div>
+										</div>
+	
+										<div class="teach__slide swiper-slide col-md-12 col-xl-8" data-toggle>
+											<div class="gallery__bg-img_cover" style="background-image: url('img/img_teacher1.jpg');"></div>
+											<div class="gallery__title">Aaron Franklin</div>
+											<div class="gallery__text">Eaches texas-style BBQ</div>
+										</div>
+	
+										<div class="teach__slide swiper-slide col-md-12 col-xl-8" data-toggle>
+											<div class="gallery__bg-img_cover" style="background-image: url('img/img_teacher2.jpg');"></div>
+											<div class="gallery__title">Aaron Franklin</div>
+											<div class="gallery__text">Eaches texas-style BBQ</div>
+										</div>
+	
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="teach__arrow_carousel arrow_carousel">
+							<button class="teach__prev_slide prev_slide" aria-label="Previous">
+								<svg class="icon_slide icon icon_arrow_prev" aria-hidden="true">
+									<use xlink:href="#icon-arrow"></use>
+								</svg>
+							</button>
+
+								<span class="teach__swiper_pagination swiper-pagination"></span>
+
+							<button class="teach__next_slide next_slide" aria-label="Next">
+								<svg class="icon_slide icon icon_arrow_next" aria-hidden="true">
+									<use xlink:href="#icon-arrow"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+
+				</section>
+			</div>
+
+
+			<section id="faq" class="faq ">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-8 col-xl-5">
+							<h2 class="title_2 ">FAQ</h2>
+
+						</div>
+
+						<div class="col-md-16 col-xl-18 offset-xl-1">
+							<!-- 
+				<div id="accordionGroup" class="Accordion" data-allow-multiple>
+				<div id="accordionGroup" class="Accordion" >
+			-->
+							<div id="accordionGroup" class="Accordion" data-allow-toggle>
+
+								<h3>
+									<button aria-expanded="false" class="Accordion-trigger" aria-controls="sect1" id="accordion1id">
+										<span class="Accordion-title"> What services and value does SEA provide?
+											<svg class="icon  Accordion-icon">
+												<use xlink:href="#icon-triangle"></use>
+											</svg>
+										</span>
+									</button>
+								</h3>
+								<div id="sect1" role="region" aria-labelledby="accordion1id" class="Accordion-panel">
+									<p>SEA, unlike many other programs, is structured to deliver knowledge and real-life experience to its
+										students. Further, we introduce students to entrepreneurs, mentors, industry experts, funding
+										sources,
+										service providers and, of course, a wide range of apprenticeship opportunities.
+									</p>
+								</div>
+
+								<h3>
+									<button aria-expanded="false" class="Accordion-trigger" aria-controls="sect2" id="accordion2id">
+										<span class="Accordion-title"> What services and value does SEA provide?
+											<svg class="icon  Accordion-icon">
+												<use xlink:href="#icon-triangle"></use>
+											</svg>
+										</span>
+									</button>
+								</h3>
+								<div id="sect2" role="region" aria-labelledby="accordion2id" class="Accordion-panel">
+									<p>SEA, unlike many other programs, is structured to deliver knowledge and real-life experience to its
+										students. Further, we introduce students to entrepreneurs, mentors, industry experts, funding
+										sources,
+										service providers and, of course, a wide range of apprenticeship opportunities.
+									</p>
+								</div>
+
+								<h3>
+									<button aria-expanded="false" class="Accordion-trigger" aria-controls="sect3" id="accordion3id">
+										<span class="Accordion-title"> What services and value does SEA provide?
+											<svg class="icon  Accordion-icon">
+												<use xlink:href="#icon-triangle"></use>
+											</svg>
+										</span>
+									</button>
+								</h3>
+								<div id="sect3" role="region" aria-labelledby="accordion3id" class="Accordion-panel">
+									<p>SEA, unlike many other programs, is structured to deliver knowledge and real-life experience to its
+										students. Further, we introduce students to entrepreneurs, mentors, industry experts, funding
+										sources,
+										service providers and, of course, a wide range of apprenticeship opportunities.
+									</p>
+								</div>
+
+
+
+								<div class="toggle_faq" data-toggle_faq>
+									<h3>
+										<button aria-expanded="false" class="Accordion-trigger" aria-controls="sect4" id="accordion4id">
+											<span class="Accordion-title"> What services and value does SEA provide?
+												<svg class="icon  Accordion-icon">
+													<use xlink:href="#icon-triangle"></use>
+												</svg>
+											</span>
+										</button>
+									</h3>
+									<div id="sect4" role="region" aria-labelledby="accordion4id" class="Accordion-panel">
+										<p>SEA, unlike many other programs, is structured to deliver knowledge and real-life experience to
+											its students. Further, we introduce students to entrepreneurs, mentors, industry experts, funding
+											sources, service providers and, of course, a wide range of apprenticeship opportunities.
+										</p>
+									</div>
+
+									<h3>
+										<button aria-expanded="false" class="Accordion-trigger" aria-controls="sect5" id="accordion5id">
+											<span class="Accordion-title"> What services and value does SEA provide?
+												<svg class="icon  Accordion-icon">
+													<use xlink:href="#icon-triangle"></use>
+												</svg>
+											</span>
+										</button>
+									</h3>
+									<div id="sect5" role="region" aria-labelledby="accordion5id" class="Accordion-panel">
+										<p>SEA, unlike many other programs, is structured to deliver knowledge and real-life experience to
+											its students. Further, we introduce students to entrepreneurs, mentors, industry experts, funding
+											sources, service providers and, of course, a wide range of apprenticeship opportunities.
+										</p>
+										<p>SEA, unlike many other programs, is structured to deliver knowledge and real-life experience to
+											its students. Further, we introduce students to entrepreneurs, mentors, industry experts, funding
+											sources, service providers and, of course, a wide range of apprenticeship opportunities.
+										</p>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+
+
+						<div class="col-md-8 col-xl-5">
+							<button class="btn btn_xl btn__faq" data-btn_toggle_faq>see more question
+								<svg class="icon icon_triangle">
+									<use xlink:href="#icon-triangle"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="faq__bg_cover m_negativ" style="background-image: url('img/bg_faq.jpg');"></div>
+				</div>
+			</section>
+
+
+			<footer class="footer">
+				<div class="container">
+					<div class="row footer__row">
+						
+						<button class="btn_up" data-up aria-label="наверх">
+							<svg class="icon icon_arrow_up">
+								<use xlink:href="#icon-arrow"></use>
+							</svg>
+						</button>
+						
+						<div class="footer__col_link col-24 col-md-auto order-md-1">
+							<a href="#!" class="footer_link">Legal Notice</a>
+	
+							<nav class=" ">
+								<ul class="socials">
+									<li><a aria-label="facebook" target="_blank" rel="noopener noreferrer" href="https://facebook.com/">
+											<svg class="icon">
+												<use xlink:href="#icon-facebook"></use>
+											</svg></a>
+									</li>
+									<li><a aria-label="twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/">
+											<svg class="icon">
+												<use xlink:href="#icon-twitter"></use>
+											</svg></a>
+									</li>
+									<li><a aria-label="instagram" target="_blank" rel="noopener noreferrer" href="https://instagram.com/">
+											<svg class="icon">
+												<use xlink:href="#icon-instagram"></use>
+											</svg></a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="col-auto ">
+							<div class="copyright">Copyright © 2019 Social Entrepreneurship Academy</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+		</main>
+
+
+
+	</div> <!-- wrap -->
+
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+	<script src="js/ofi.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/accordion.js"></script>
+
+
+	<script src="js/main.js"></script>
+
+</body>
+
+</div>
+</html>
