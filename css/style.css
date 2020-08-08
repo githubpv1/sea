@@ -190,7 +190,6 @@ body {
 }
 
 
-
 .wrap {
 	max-width: 1900px;
 	margin-right: auto;
@@ -211,7 +210,7 @@ body {
 	}
 }
 
-.head__nav {
+.head__top {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -226,7 +225,7 @@ body {
 }
 
 @media (min-width: 768px) {
-	 .head__nav {
+	 .head__top {
 		 top: 20px;
 		 flex-direction: column;
 		 width: auto;
@@ -390,7 +389,7 @@ body {
 
 
 input {
-	width: 19em;
+	max-width: 19em;
 	padding-bottom: 1em;
 	margin-bottom: 30px;
 	color: #fefefe;
