@@ -121,7 +121,7 @@ function scrollMenu(nav, offset, speed, easing) {
 };
 
 if(window.innerWidth < 768) {
-	scrollMenu('.site__nav', '.head__nav'); 
+	scrollMenu('.site__nav', '.head__top'); 
 }else {
 	scrollMenu('.site__nav'); 
 }
@@ -133,7 +133,7 @@ var mySwiper = new Swiper('.cours__swiper', {
 	slidesPerView: 1,
 	spaceBetween: 20,
 	loop: true,
-	grabCursor: true,
+	// grabCursor: true,
 	navigation: {
 		nextEl: '.cours__next_slide',
 		prevEl: '.cours__prev_slide',
@@ -146,25 +146,40 @@ var mySwiper = new Swiper('.cours__swiper', {
 	coverflowEffect: {
 		rotate: 0,
 		stretch: 0,
-		depth: 50,
-		modifier: 20,
+		depth: 100,
+		modifier: 3,
 		slideShadows: false,
 	},
 	breakpoints: {
 		768: {
+			centeredSlides: true,
 			slidesPerView: 2,
-			pagination: {
-				type: 'custom',
-				renderCustom: function (swiper, current, total) {
-					var next;
-					if (current == total) {
-						next = 1;
-					} else {
-						next = current + 1;
-					}
-					return current + '-' + next + ' / ' + total;
-				}
+			coverflowEffect: {
+				stretch: 40,
+				depth: 50,
+				modifier: 4,
 			},
+		},
+		1200: {
+			centeredSlides: true,
+			slidesPerView: 4,
+			coverflowEffect: {
+				stretch: 70,
+				depth: 40,
+				modifier: 2,
+			},
+			// pagination: {
+			// 	type: 'custom',
+			// 	renderCustom: function (swiper, current, total) {
+			// 		var next;
+			// 		if (current == total) {
+			// 			next = 1;
+			// 		} else {
+			// 			next = current + 1;
+			// 		}
+			// 		return current + '-' + next + ' / ' + total;
+			// 	}
+			// },
 		},
 	}
 });
