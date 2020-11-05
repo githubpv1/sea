@@ -660,11 +660,10 @@ input:focus::placeholder {
 	font-family: KronaOne;
 	font-size: 24px;
 	color: #9dfdf2;
-	border-radius: 5px;
 	border: none;
 	border-bottom: 1px solid #9dfdf2;
-	background: url(arrow-circle.png) no-repeat 96% 50%;
-	background-size: 25px;
+	/* background: url(arrow-circle.png) no-repeat 96% 50%; */
+	/* background-size: 25px; */
 	background-color: #333a42;
 	cursor: pointer;
 	-webkit-appearance: none;
@@ -684,6 +683,7 @@ input:focus::placeholder {
 
 .select-css option {
 	color: #fff;
+	font-size: 17px;
 }
 
 /* line-bottom 
