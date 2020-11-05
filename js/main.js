@@ -353,7 +353,8 @@ function slideUp() {
     }
   }
 
-  if (btn_up && window.innerWidth < 768) {
+  // if (btn_up && window.innerWidth < 768) {
+  if (btn_up) {
     btn_up.addEventListener('click', scrollUp);
     document.addEventListener('scroll', showBtnUp);
   }
