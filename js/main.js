@@ -1,17 +1,18 @@
-/*	*/
-objectFitImages(); //IE polyfill
+
+objectFitImages();
+
 
 
 function scrollMenu(nav, offset, speed, easing) {
 
 	var menu = document.querySelector(nav);
 	var menuHeight;
-	if (offset) { 
+	if (offset) {
 		var head = document.querySelector(offset);
 
-		if (head) { 
+		if (head) {
 			menuHeight = head.clientHeight;
-			
+
 		} else {
 			menuHeight = 0;
 		}
@@ -120,11 +121,13 @@ function scrollMenu(nav, offset, speed, easing) {
 	});
 };
 
-if(window.innerWidth < 768) {
-	scrollMenu('.site__nav', '.head__top'); 
-}else {
-	scrollMenu('.site__nav'); 
+if (window.innerWidth < 768) {
+	scrollMenu('.site__nav', '.head__top');
+} else {
+	scrollMenu('.site__nav');
 }
+
+
 
 
 /* courses */
@@ -185,10 +188,17 @@ var mySwiper = new Swiper('.cours__swiper', {
 });
 
 
+
+
+
 /* teacher */
 
-if (window.innerWidth < 768) {
-	var mySwiper = new Swiper('.teach__swiper', {
+(function () {
+	var mq = window.matchMedia('(max-width: 767px)');
+
+	var mySwiper = undefined;
+
+	var settings = {
 		spaceBetween: 20,
 		loop: true,
 		autoHeight: true,
@@ -202,87 +212,87 @@ if (window.innerWidth < 768) {
 			clickable: true,
 			type: 'fraction',
 		},
-	});
-}
+	}
 
+	mq.addListener(startSlider);
+	startSlider();
 
-/*автовысота для textarea 
- var tx = document.getElementsByTagName('textarea');
-for (var i = 0; i < tx.length; i++) {
-  tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-  tx[i].addEventListener("input", OnInput, false);
-}
-function OnInput() {
-  this.style.height = 'auto';
-  this.style.height = (this.scrollHeight) + 'px';
-}*/
-
-
-/*фокус с клавиатуры на метку для Firefox
- var input = document.getElementById('input_file');      
-
-input.addEventListener('focus', function(){ 
-	input.classList.add( 'has-focus' ); 
-});
-input.addEventListener('blur', function(){ 
-	input.classList.remove( 'has-focus' ); 
-});*/
-
-
-/*выбрано файлов input_file кол-во
-document.getElementById('input_file').onchange = function(e) {
-	var file_name = document.getElementById ('file-name'),
-	    files = this.files;
-	
-	if(files.length == 1) {
-			file_name.innerHTML = 'Имя файла: ' + files[0].name;
+	function startSlider() {
+		if (mq.matches) {
+			mySwiper = new Swiper('.teach__swiper', settings);
 		} else {
-			file_name.innerHTML = 'Выбрано ' + files.length + ' Файла(ов)';
+			if (mySwiper) {
+				mySwiper.destroy();
+				mySwiper = undefined;
+			}
 		}
-}		*/
-
-/*
-document.querySelector(".btn__more").onclick = function() {
-  document.querySelector(".droplist").classList.toggle('hidden');
-}*/
+	}
+}());
 
 
 
 
-function slideToggle() {
-	slideUp.call(this);
-	slideDown.call(this);
-}
 
-function slideDown() {
-	if ((this.style.display == 'none') || (getComputedStyle(this).display == 'none')) {
-		this.style.overflow = 'hidden';
-		this.style.display = 'block';
-		var height = this.offsetHeight;
-		this.style.height = '0px';
-		setTimeout(function (elem) {
-			elem.style.height = height + 'px';
-		}, 20, this);
-		setTimeout(function (elem) {
-			elem.style.height = '';
-		}, 1040, this);
+
+function _slideToggle(el, time) {
+	if (el.style.display == 'none' || getComputedStyle(el).display == 'none') {
+		_slideDown(el, time);
+	} else {
+		_slideUp(el, time);
 	}
 }
 
-function slideUp() {
-	if (!((this.style.display == 'none') || (getComputedStyle(this).display == 'none'))) {
-		this.style.overflow = 'hidden';
-		var height = this.offsetHeight;
-		this.style.height = height + 'px';
-		setTimeout(function (elem) {
-			elem.style.height = '0px';
-		}, 20, this);
-		setTimeout(function (elem) {
-			elem.style.display = 'none';
-			elem.style.height = '';
-		}, 1040, this);
+function _slideDown(el, time) {
+	if (el.style.display == 'none' || getComputedStyle(el).display == 'none') {
+		el.style.display = 'block';
+		var height = el.offsetHeight;
+		el.style.overflow = 'hidden';
+		el.style.height = 0;
+		el.style.paddingBottom = 0;
+		el.style.marginBottom = 0;
+		el.offsetHeight;
+		el.style.transitionProperty = 'all';
+		el.style.transitionDuration = time + 'ms';
+		el.style.height = height + 'px';
+		el.style.removeProperty('padding-bottom');
+		el.style.removeProperty('margin-bottom');
+
+		setTimeout(function () {
+			el.style.removeProperty('height');
+			el.style.removeProperty('overflow');
+			el.style.removeProperty('transition-duration');
+			el.style.removeProperty('transition-property');
+
+		}, time);
 	}
 }
+
+function _slideUp(el, time) {
+	if (!(el.style.display == 'none' || getComputedStyle(el).display == 'none')) {
+		el.style.transitionProperty = 'all';
+		el.style.transitionDuration = time + 'ms';
+		el.style.height = el.offsetHeight + 'px';
+		el.offsetHeight;
+		el.style.overflow = 'hidden';
+		el.style.height = 0;
+		el.style.paddingBottom = 0;
+		el.style.marginBottom = 0;
+
+		setTimeout(function () {
+			el.style.display = 'none';
+			el.style.removeProperty('height');
+			el.style.removeProperty('overflow');
+			el.style.removeProperty('transition-duration');
+			el.style.removeProperty('transition-property');
+			el.style.removeProperty('padding-bottom');
+			el.style.removeProperty('margin-bottom');
+		}, time);
+	}
+}
+
+
+
+
 
 
 /* teach	*/
@@ -295,10 +305,11 @@ function slideUp() {
 		this.classList.toggle('oupen'); /*для ротации svg стрелки*/
 
 		for (let i = 0; i < elem.length; i++) {
-			slideToggle.call(elem[i]);
+			_slideToggle(elem[i], 1000);
 		}
 	});
 }());
+
 
 
 
@@ -310,11 +321,9 @@ function slideUp() {
 
 	btn_toggle.addEventListener('click', function () {
 		this.classList.toggle('oupen');
-		slideToggle.call(elem);
+		_slideToggle(elem, 500);
 	});
 }());
-
-
 
 
 
@@ -322,52 +331,40 @@ function slideUp() {
 /* плавная прокрутка вверх */
 
 (function () {
-  var btn_up = document.querySelector('[data-up]');
+	var btn_up = document.querySelector('[data-up]');
 
-  function scrollUp() {
-    window.scrollBy(0, -80);
+	function scrollUp() {
+		window.scrollBy(0, -80);
 
-    if (window.pageYOffset > 0) {
-      requestAnimationFrame(scrollUp);
-    }
-  }
+		if (window.pageYOffset > 0) {
+			requestAnimationFrame(scrollUp);
+		}
+	}
 
-  var lastScrollPos = 0;
-  var start = true;
+	var lastScrollPos = 0;
+	var start = true;
 
-  function showBtnUp() {
-    if (start) {
-      start = false;
+	function showBtnUp() {
+		if (start) {
+			start = false;
 
-      setTimeout(function () {
-        var scrollPos = window.pageYOffset;
+			setTimeout(function () {
+				var scrollPos = window.pageYOffset;
 
-        if (scrollPos > 600 && scrollPos < lastScrollPos) {
-          btn_up.classList.add('show');
-        } else {
-          btn_up.classList.remove('show');
-        }
-        lastScrollPos = scrollPos;
-        start = true;
-      }, 200);
-    }
-  }
+				if (scrollPos > 600 && scrollPos < lastScrollPos) {
+					btn_up.classList.add('show');
+				} else {
+					btn_up.classList.remove('show');
+				}
+				lastScrollPos = scrollPos;
+				start = true;
+			}, 200);
+		}
+	}
 
-  // if (btn_up && window.innerWidth < 768) {
-  if (btn_up) {
-    btn_up.addEventListener('click', scrollUp);
-    document.addEventListener('scroll', showBtnUp);
-  }
+	// if (btn_up && window.innerWidth < 768) {
+	if (btn_up) {
+		btn_up.addEventListener('click', scrollUp);
+		document.addEventListener('scroll', showBtnUp);
+	}
 }());
-
-/*при клике добавить класс this*/
-
-// document.querySelector('.select-css').onclick = function () {
-
-// 	if (this.classList.contains('oupen')) {
-// 		this.classList.remove('oupen');
-
-// 	} else {
-// 		this.classList.add('oupen');
-// 	}
-// };
