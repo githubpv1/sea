@@ -565,7 +565,7 @@ input:focus::placeholder {
 
 @media (min-width: 1200px) {
 	.m_negativ {
-		margin-right: -80px;
+		margin-right: -40px;
 	}
 }
 
@@ -1178,8 +1178,9 @@ input:focus::placeholder {
 	.btn_up {
 		position: absolute;
 		left: 30px;
+		right: auto;
 		bottom: auto;
-		display: block;
+		display: inline-block;
 		background-color: transparent;
 		border-color: transparent;
 	}
