@@ -1180,7 +1180,7 @@ input:focus::placeholder {
 		left: 30px;
 		right: auto;
 		bottom: auto;
-		display: inline-block;
+		display: inline;
 		background-color: transparent;
 		border-color: transparent;
 	}
